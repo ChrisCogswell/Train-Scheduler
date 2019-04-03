@@ -11,6 +11,65 @@
 </head>
 <body>
     
+    <div class="jumbotron jumbotron-fluid" id="header">
+        <div class="container">
+          <h1 class="display-4">"Where in the World?</h1>
+          <h3>Train Schedule</h3>
+        </div>
+     </div>
+
+ <div class="row">
+     <div class="col-lg-2"></div>
+     <div class="col-lg-8" id="cards">
+            <div class="card card-default">
+              <div class="card-header">
+                Current Train Schedule
+              </div>
+              <div class="card-body" id="recent-member">
+                <p id="name-display"></p>
+                <p id="destination-display"></p>
+                <p id="frequency-display"></p>
+                <p id="arrival-display"></p>
+                <p id="minutes-display"></p>
+              </div>
+            </div>
+          </div>
+     <div class="col-lg-2"></div>
+
+
+     
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8" id="cards">
+        <div class="card card-default">
+          <div class="card-header">
+            Add Train
+          </div>
+          <div class="card-body">
+            <!-- Sign-up Form (note the various input "types")-->
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">Train Name</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="destination-input">Destination</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group row">
+                <label for="time-input">First Train Time</label>
+                <input class="form-control" id="age-input" type="number">
+              </div>
+              <div class="form-group row">
+                <label for="comment-input">How did you hear about us?</label>
+                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>   
+      <div class="col-lg-2"></div>   
+ </div>
     <script src="./assets/javascript/app.js"></script>
 </body>
 </html>

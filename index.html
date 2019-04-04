@@ -26,11 +26,38 @@
                 Current Train Schedule
               </div>
               <div class="card-body" id="recent-member">
-                <p id="name-display"></p>
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <!-- The scope attribute specifies that this is a header for a column -->
+                          <th scope="col">Train Name</th>
+                          <th scope="col">Destination</th>
+                          <th scope="col">Frequency (Min)</th>
+                          <th scope="col">Next Arrival</th>
+                          <th scope="col">Minutes Away</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="name-display"></td>
+                          <td id="destination-display"></td>
+                          <td id="frequency-display"></td>
+                          <td id="arrival-display"></td>
+                          <td id="minutes-display"></td>
+                        </tr>
+                        <!-- Insert additional movie rows here -->
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                <!-- <p id="name-display"></p>
                 <p id="destination-display"></p>
                 <p id="frequency-display"></p>
                 <p id="arrival-display"></p>
-                <p id="minutes-display"></p>
+                <p id="minutes-display"></p> -->
               </div>
             </div>
           </div>
@@ -56,12 +83,12 @@
                 <input class="form-control" id="email-input" type="email">
               </div>
               <div class="form-group row">
-                <label for="time-input">First Train Time</label>
+                <label for="time-input">First Train Time (HH:mm-military time)</label>
                 <input class="form-control" id="age-input" type="number">
               </div>
               <div class="form-group row">
-                <label for="comment-input">How did you hear about us?</label>
-                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                <label for="comment-input">Frequency (min)</label>
+                <textarea class="form-control" id="comment-input" rows="1"></textarea>
               </div>
               <button class="btn btn-default" id="add-user" type="submit">Submit</button>
             </form>
@@ -71,5 +98,6 @@
       <div class="col-lg-2"></div>   
  </div>
     <script src="./assets/javascript/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
 </body>
 </html>

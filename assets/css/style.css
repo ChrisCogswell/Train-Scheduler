@@ -1,3 +1,8 @@
+body {
+    background: url(../images/train-station1.jpg);
+    /* background-position:  */
+}
+
 h1 {
     text-align: center;
 }
@@ -9,15 +14,15 @@ h3 {
 #header {
     margin-left: 50px;
     margin-right: 50px;
-    background-color: rgb(141, 92, 92);
+    background-color:rgb(44,65,42);
 }
 
 .card-header {
-    background-color: rgb(76, 76, 179);
+    background-color: rgb(207,169,114);
 }
 
 .card-body {
-    border: 2px solid  rgb(76, 76, 179);
+    border: 2px solid  rgb(207,169,114);
 }
 
 #cards {

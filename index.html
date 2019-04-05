@@ -13,7 +13,7 @@
     
     <div class="jumbotron jumbotron-fluid" id="header">
         <div class="container">
-          <h1 class="display-4">"Where in the World?</h1>
+          <h1 class="display-4">Where in the World?</h1>
           <h3>Train Schedule</h3>
         </div>
      </div>
@@ -45,7 +45,7 @@
                           <td id="arrival-display"></td>
                           <td id="minutes-display"></td>
                         </tr>
-                        <!-- Insert additional movie rows here -->
+                    
                         <tr>
                           <td></td>
                           <td></td>
@@ -53,11 +53,6 @@
                         </tr>
                       </tbody>
                     </table>
-                <!-- <p id="name-display"></p>
-                <p id="destination-display"></p>
-                <p id="frequency-display"></p>
-                <p id="arrival-display"></p>
-                <p id="minutes-display"></p> -->
               </div>
             </div>
           </div>
@@ -72,7 +67,6 @@
             Add Train
           </div>
           <div class="card-body">
-            <!-- Sign-up Form (note the various input "types")-->
             <form role="form">
               <div class="form-group row">
                 <label for="name-input">Train Name</label>
@@ -80,24 +74,24 @@
               </div>
               <div class="form-group row">
                 <label for="destination-input">Destination</label>
-                <input class="form-control" id="email-input" type="email">
+                <input class="form-control" id="destination-input" type="email">
               </div>
               <div class="form-group row">
                 <label for="time-input">First Train Time (HH:mm-military time)</label>
-                <input class="form-control" id="age-input" type="number">
+                <input class="form-control" id="time-input" type="text">
               </div>
               <div class="form-group row">
-                <label for="comment-input">Frequency (min)</label>
-                <textarea class="form-control" id="comment-input" rows="1"></textarea>
+                <label for="frequency-input">Frequency (min)</label>
+                <textarea class="form-control" id="frequency-input" rows="1"></textarea>
               </div>
-              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+              <button class="btn btn-default" id="add-train" type="submit">Submit</button>
             </form>
           </div>
         </div>
       </div>   
       <div class="col-lg-2"></div>   
  </div>
-    <script src="./assets/javascript/app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+ <script src="./assets/javascript/app.js"></script>
 </body>
 </html>

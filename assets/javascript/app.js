@@ -28,26 +28,49 @@ $("#add-train").on("click", function(event){
     frequency = $("#frequency-input").val().trim();
     nextArrival = $("#time-input").val().trim();
 
-    database.ref().set({
+    var newTrain = {
         trainName: trainName,
         destination: destination,
         frequency: frequency,
         nextArrival: nextArrival
-    });
+    };
+
+    database.ref().push(newTrain);
+    
+    $("#name-input").val("");
+    $("#destination-input").val("");
+    $("#frequency-input").val("");
+    $("#time-input").val("");
+    
 });
 
-database.ref().on("value", function(snapshot){
+database.ref().on("child_added", function(snapshot){
 
     console.log(snapshot.val());
-    console.log(snapshot.val().trainName);
-    console.log(snapshot.val().destination);
-    console.log(snapshot.val().frequency);
-    console.log(snapshot.val().nextArrival);
 
-    $("#name-display").text(snapshot.val().trainName);
-    $("#destination-display").text(snapshot.val().destination);
-    $("#frequency-display").text(snapshot.val().frequency);
-    $("#arrival-display").text(snapshot.val().nextArrival);
+    var trainName = snapshot.val().trainName;
+    var destination = snapshot.val().destination;
+    var frequency = snapshot.val().frequency;
+    var nextArrival = snapshot.val().nextArrival;
+
+    console.log(trainName);
+    console.log(destination);
+    console.log(frequency);
+    console.log(nextArrival);
+
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destination),
+        $("<td>").text(frequency),
+        $("<td>").text(nextArrival)
+    );
+
+    $("#train-table > tbody").append(newRow);
+
+    // $("#name-display").text(snapshot.val().trainName);
+    // $("#destination-display").text(snapshot.val().destination);
+    // $("#frequency-display").text(snapshot.val().frequency);
+    // $("#arrival-display").text(snapshot.val().nextArrival);
 
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);

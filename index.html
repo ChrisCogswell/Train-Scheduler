@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <div class="jumbotron jumbotron-fluid" id="header">
+    <div class="jumbotron" id="header">
         <div class="container">
           <h1 class="display-4">Where in the World?</h1>
           <h3>Train Schedule</h3>
@@ -26,7 +26,7 @@
                 Current Train Schedule
               </div>
               <div class="card-body" id="recent-member">
-                  <table class="table">
+                  <table class="table" id="train-table">
                       <thead>
                         <tr>
                           <!-- The scope attribute specifies that this is a header for a column -->
@@ -44,12 +44,6 @@
                           <td id="frequency-display"></td>
                           <td id="arrival-display"></td>
                           <td id="minutes-display"></td>
-                        </tr>
-                    
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
                         </tr>
                       </tbody>
                     </table>

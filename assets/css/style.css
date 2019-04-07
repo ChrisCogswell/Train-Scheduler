@@ -1,6 +1,7 @@
 body {
     background: url(../images/train-station1.jpg);
     /* background-position:  */
+    font-size: 12px;
 }
 
 h1 {
@@ -12,9 +13,10 @@ h3 {
 }
 
 #header {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
     background-color:rgb(44,65,42);
+    color: wheat;
 }
 
 .card-header {
@@ -28,3 +30,4 @@ h3 {
 #cards {
     margin-bottom: 10px;
 }
+

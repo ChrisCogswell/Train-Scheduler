@@ -26,7 +26,7 @@ $("#add-train").on("click", function(event){
     trainName = $("#name-input").val().trim();
     destination = $("#destination-input").val().trim();
     frequency = $("#frequency-input").val().trim();
-    nextArrival = $("#time-input").val().trim();
+    nextArrival = moment($("#time-input").val().trim(), "HH:mm").format("X");
 
     var newTrain = {
         trainName: trainName,
@@ -53,25 +53,27 @@ database.ref().on("child_added", function(snapshot){
     var frequency = snapshot.val().frequency;
     var nextArrival = snapshot.val().nextArrival;
 
+    var nextArrivalPretty = moment.unix(nextArrival).format("HH:mm");
+    var minsAway = moment().diff(moment(nextArrival, "X"), "minutes");
+
     console.log(trainName);
     console.log(destination);
     console.log(frequency);
     console.log(nextArrival);
+    console.log(nextArrivalPretty);
+    console.log(minsAway);
 
     var newRow = $("<tr>").append(
         $("<td>").text(trainName),
         $("<td>").text(destination),
         $("<td>").text(frequency),
-        $("<td>").text(nextArrival)
+        $("<td>").text(nextArrivalPretty),
+        $("<td>").text(minsAway)
     );
 
     $("#train-table > tbody").append(newRow);
 
-    // $("#name-display").text(snapshot.val().trainName);
-    // $("#destination-display").text(snapshot.val().destination);
-    // $("#frequency-display").text(snapshot.val().frequency);
-    // $("#arrival-display").text(snapshot.val().nextArrival);
-
+    
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });

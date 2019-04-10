@@ -18,6 +18,8 @@ h3 {
     background-color:rgb(44,65,42);
     color: wheat;
     font-family: 'Fascinate Inline', cursive;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .card-header {
@@ -31,4 +33,9 @@ h3 {
 #cards {
     margin-bottom: 10px;
 }
+
+#clock-display {
+    font-size: 20px;
+}
+
 

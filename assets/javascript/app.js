@@ -12,21 +12,15 @@ var config = {
 
   var database = firebase.database();
 
-  
+// Clock function
 
-//   var trainName = "";
-//   var destination = "";
-//   var frequency = "";
-//   var firstArrival = "";
-//   var nextTrain = "";
-//   var minsAway = "";
-
-
-  function update() {
+  function clock() {
     $("#clock-display").html(moment().format("MMMM Do YYYY, h:mm:ss a"));
   }
   
-  setInterval(update, 1000);
+  setInterval(clock, 1000);
+
+// Page refresh function
 
   function autoRefreshPage() {
     
@@ -34,7 +28,7 @@ var config = {
     }
     setInterval(autoRefreshPage, 60000);
 
-  
+// Add train click event that pushes to Firebase  
 
 $("#add-train").on("click", function(event){
     event.preventDefault();
@@ -60,6 +54,8 @@ $("#add-train").on("click", function(event){
     
 });
 
+// This function displays content on the page and uses moment.js for calculations
+
 database.ref().on("child_added", function(snapshot){
 
     console.log(snapshot.val());
@@ -82,15 +78,9 @@ database.ref().on("child_added", function(snapshot){
 
     var nextTrain = moment().add(minsAway, "minutes");
 
-    var nextTrainSimple = moment(nextTrain).format("HH:mm");
+    var nextTrainSimple = moment(nextTrain).format("MMMM Do, HH:mm");
     
-    
-    // var nextArrivalPretty = moment.unix(nextArrival).format("HH:mm");
-    // var minsAway = moment().diff(moment(nextArrival, "X"), "minutes");
-    
-    
-    
-    
+       
     
     console.log(trainName);
     console.log(destination);
